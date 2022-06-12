@@ -84,18 +84,18 @@ public class UserDAO {
     }
 
 
-    public User getUser(String login) throws SQLException {
+    public User getUser(String login) throws SQLException {////////////////
         User user = new User();
         PreparedStatement pStatement = null;
         ResultSet resultSet = null;
         try (Connection connection = MySQLConnector.getConnection()) {
-            pStatement = connection.prepareStatement(SELECT_USER);
-            pStatement.setString(1, login);
+            pStatement = connection.prepareStatement(SELECT_USER);///////////////////
+            pStatement.setString(1, login);//////////////////
             resultSet = pStatement.executeQuery();
             if (resultSet.next()) {
                 mapUser(user, resultSet);
             } else {
-                throw new SQLException("User with " + login + " not found in database");
+                throw new SQLException("User with " + login + " not found in database");////////////////////
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -163,6 +163,22 @@ public class UserDAO {
             close(resultSet);
         }
         return place;
+    }
+
+    public void updatePlace(int id,Place place) {
+        PreparedStatement pStatement = null;
+        try (Connection connection = MySQLConnector.getConnection()) {
+            pStatement = connection.prepareStatement(UPDATE_PLACE);
+            pStatement.setInt(4, id);
+            pStatement.setString(1, place.getStreet());
+            pStatement.setString(2, place.getDistrict());
+            pStatement.setString(3, place.getCity());
+            pStatement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            close(pStatement);
+        }
     }
 
     public Wallet getUserWallet(int id){

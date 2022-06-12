@@ -46,4 +46,8 @@ public class CryptPassword {
         );
         return Base64.getEncoder().encodeToString(key.getEncoded());
     }
+
+    public static void main(String[] args) throws Exception {
+        System.out.println(CryptPassword.getSaltedHash("admin"));
+    }
 }

@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mx-auto {
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    width: 320px;
+    height: 450px;
+    margin-top: 150px;
+    margin-left: 100px;
+}

@@ -11,10 +11,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class AdminBlockedPage implements Filter {
+    @Override
     public void init(FilterConfig config) throws ServletException {
-    }
-
-    public void destroy() {
     }
 
     @Override
@@ -24,11 +22,15 @@ public class AdminBlockedPage implements Filter {
             User user = (User) session.getAttribute("user");
             if(user != null){
                 if(Role.ADMIN.equals(user.getRole())){
-                    ((HttpServletResponse) resp).sendRedirect("/internet_provider/home");
+                    ((HttpServletResponse) resp).sendRedirect("/internet_provider/");
                     return;
                 }
             }
         }
         chain.doFilter(req, resp);
+    }
+
+    @Override
+    public void destroy() {
     }
 }

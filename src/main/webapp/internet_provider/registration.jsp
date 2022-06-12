@@ -13,8 +13,8 @@
     <title>Internet Provider</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body>
-<header class="p-3 bg-dark text-white">
+<body style="background-image: url(https://cdn.pixabay.com/photo/2022/05/29/04/35/trails-7228378_960_720.jpg)">
+<header class="p-3 bg-light text-black">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -24,18 +24,14 @@
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Internet</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Cable_TV</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">Phone</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">IP_TV</a></li>
+                <li><a href="/internet_provider/home" class="nav-link px-2 text-black">Home</a></li>
             </ul>
         </div>
     </div>
 </header>
 <div class="container text-center">
     <form style="width: 330px; margin: auto; margin-top: 110px; padding: 30px;" action="/internet_provider/registration" method="post">
-        <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
+        <h1 class="h3 mb-3 font-weight-normal text-light">Sign up</h1>
         <input type="login" placeholder="Login" class="form-control" name="login" required>
         <input type="password" placeholder="Password" class="form-control" name="password" required>
         <input type="password" placeholder="Repeat password" class="form-control" name="repeatPassword" required>

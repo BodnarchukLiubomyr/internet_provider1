@@ -1,27 +1,21 @@
-package com.company.model.entity.tariff;
+package com.company.model.entity.suggestion;
 
-import com.company.model.entity.place.Place;
 import com.company.model.entity.service.Service;
+import com.company.model.entity.tariff.TariffStatus;
 
 import java.math.BigDecimal;
 
-public class Tariff implements Comparable<Tariff>{
+public class UserSuggestion {
     private int id;
     private String name_en;
     private int time;
     private BigDecimal price;
     private String description;
     private Service service;
-    private TariffStatus status;
 
-    public Tariff(double price1){
-        price = new BigDecimal(price1);
-    }
-
-    public Tariff() {
+    public UserSuggestion() {
         price = new BigDecimal(0);
         service = new Service();
-        status = new TariffStatus();
     }
 
     public int getId() {
@@ -45,18 +39,18 @@ public class Tariff implements Comparable<Tariff>{
         this.time = time;
     }
 
-    public BigDecimal getPrice() {
-        return price;
-    }
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
     public String getDescription() {
         return description;
     }
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     public Service getService() {
@@ -66,21 +60,9 @@ public class Tariff implements Comparable<Tariff>{
         this.service = service;
     }
 
-    public TariffStatus getStatus() {
-        return status;
-    }
-    public void setStatus(TariffStatus status) {
-        this.status = status;
-    }
-
-    @Override
-    public int compareTo(Tariff tariff) {
-        return this.getName_en().compareTo(tariff.getName_en());
-    }
-
     @Override
     public String toString() {
-        return "Tariff{" +
+        return "UserSuggestion{" +
                 "name_en='" + name_en + '\'' +
                 '}';
     }

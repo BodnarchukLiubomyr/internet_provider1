@@ -2,6 +2,7 @@ package com.company.controller.servlet;
 
 import com.company.model.dao.UserDAO;
 import com.company.model.encryption.CryptPassword;
+import com.company.model.entity.user.Role;
 import com.company.model.entity.user.User;
 
 
@@ -25,14 +26,14 @@ public class Login extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String login = req.getParameter("login");
+        String login = req.getParameter("login");//////////////////
         User user;
         String errorMessage = null;
         String active;
 
         try {
             UserDAO userDAO = new UserDAO();
-            user = userDAO.getUser(login);
+            user = userDAO.getUser(login);//////////////////////
             try {
                 if (CryptPassword.check(req.getParameter("password"), user.getPassword())) {
                     active = ACTIVE;
@@ -48,8 +49,11 @@ public class Login extends HttpServlet {
                 e.printStackTrace();
             }
         } catch (SQLException e) {
-            errorMessage = "Incorrect login";
+            errorMessage = "Incorrect login";///////////////
         }
+//        if(user.getPassword().equals( "admin")){
+//            user.setRole(Role.ADMIN);
+//        }
         req.setAttribute("errorMessage", errorMessage);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/internet_provider/login.jsp");
         requestDispatcher.forward(req, resp);

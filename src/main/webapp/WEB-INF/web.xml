@@ -75,55 +75,91 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>TopUpWallet</servlet-name>
-        <servlet-class>com.company.controller.servlet.TopUpWallet</servlet-class>
+        <servlet-name>PlaceChoose</servlet-name>
+        <servlet-class>com.company.controller.servlet.PlaceChoose</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>TopUpWallet</servlet-name>
-        <url-pattern>/internet_provider/topUpWallet</url-pattern>
+        <servlet-name>PlaceChoose</servlet-name>
+        <url-pattern>/internet_provider/placeChoose</url-pattern>
     </servlet-mapping>
 
-<!--    <filter>-->
-<!--        <filter-name>UserFilter</filter-name>-->
-<!--        <filter-class>com.company.controller.filter.UserFilter</filter-class>-->
-<!--    </filter>-->
+    <servlet>
+        <servlet-name>Render</servlet-name>
+        <servlet-class>com.company.controller.servlet.Render</servlet-class>
+    </servlet>
 
-<!--    <filter-mapping>-->
-<!--        <filter-name>UserFilter</filter-name>-->
-<!--        <servlet-name>UserPayments</servlet-name>-->
-<!--        <servlet-name>OwnWallet</servlet-name>-->
-<!--    </filter-mapping>-->
+    <servlet-mapping>
+        <servlet-name>Render</servlet-name>
+        <url-pattern>/internet_provider/render</url-pattern>
+    </servlet-mapping>
 
-<!--    <filter>-->
-<!--        <filter-name>AdminFilter</filter-name>-->
-<!--        <filter-class>com.company.controller.filter.AdminFilter</filter-class>-->
-<!--    </filter>-->
+    <servlet>
+        <servlet-name>AddUserSuggestion</servlet-name>
+        <servlet-class>com.company.controller.servlet.AddUserSuggestion</servlet-class>
+    </servlet>
 
-<!--    <filter-mapping>-->
-<!--        <filter-name>AdminFilter</filter-name>-->
-<!--        <servlet-name>AddTariff</servlet-name>-->
-<!--    </filter-mapping>-->
+    <servlet-mapping>
+        <servlet-name>AddUserSuggestion</servlet-name>
+        <url-pattern>/internet_provider/userSuggestion</url-pattern>
+    </servlet-mapping>
 
-<!--    <filter>-->
-<!--        <filter-name>LoginFilter</filter-name>-->
-<!--        <filter-class>com.company.controller.filter.LoginFilter</filter-class>-->
-<!--    </filter>-->
+    <servlet>
+        <servlet-name>SuggestionExamples</servlet-name>
+        <servlet-class>com.company.controller.servlet.SuggestionExamples</servlet-class>
+    </servlet>
 
-<!--    <filter-mapping>-->
-<!--        <filter-name>LoginFilter</filter-name>-->
-<!--        <servlet-name>Login</servlet-name>-->
-<!--        <servlet-name>Registration</servlet-name>-->
-<!--    </filter-mapping>-->
-<!--    -->
-<!--    <filter>-->
-<!--        <filter-name>AdminBlockedPage</filter-name>-->
-<!--        <filter-class>com.company.controller.filter.AdminBlockedPage</filter-class>-->
-<!--    </filter>-->
+    <servlet-mapping>
+        <servlet-name>SuggestionExamples</servlet-name>
+        <url-pattern>/internet_provider/suggestionExamples</url-pattern>
+    </servlet-mapping>
 
-<!--    <filter-mapping>-->
-<!--        <filter-name>AdminBlockedPage</filter-name>-->
-<!--        <servlet-name>OwnWallet</servlet-name>-->
-<!--    </filter-mapping>-->
+
+
+    <filter>
+        <filter-name>UserFilter</filter-name>
+        <filter-class>com.company.controller.filter.UserFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>UserFilter</filter-name>
+        <servlet-name>UserPayments</servlet-name>
+        <servlet-name>OwnWallet</servlet-name>
+        <servlet-name>SuggestTariffs</servlet-name>
+        <servlet-name>AddUserSuggestion</servlet-name>
+        <servlet-name>Render</servlet-name>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>com.company.controller.filter.AdminFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <servlet-name>AddTariff</servlet-name>
+        <servlet-name>SuggestionExamples</servlet-name>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.company.controller.filter.LoginFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <servlet-name>Login</servlet-name>
+        <servlet-name>Registration</servlet-name>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>AdminBlockedPage</filter-name>
+        <filter-class>com.company.controller.filter.AdminBlockedPage</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AdminBlockedPage</filter-name>
+        <servlet-name>PlaceChoose</servlet-name>
+    </filter-mapping>
 
 </web-app>

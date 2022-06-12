@@ -7,17 +7,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class LoginFilter implements Filter {
+    @Override
     public void init(FilterConfig config) throws ServletException {
-    }
-
-    public void destroy() {
     }
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         if("active".equals(req.getServletContext().getAttribute("active"))){
-            ((HttpServletResponse) resp).sendRedirect("/internet_provider/home");
+            ((HttpServletResponse) resp).sendRedirect("/internet_provider/");
         }
         chain.doFilter(req, resp);
+    }
+    @Override
+    public void destroy() {
     }
 }

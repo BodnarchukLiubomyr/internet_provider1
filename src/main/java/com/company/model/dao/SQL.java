@@ -9,7 +9,7 @@ public class SQL {
     public static final String INSERT_USER_DETAILS = "insert into "+
             "account_details(first_name_en,last_name_en,first_name_ua,last_name_ua,email,phone) " +
             "values(?,?,?,?,?,?);";
-    public static final String SELECT_USER = "select * from account where login = ?;";
+    public static final String SELECT_USER = "select * from account where login = ?;";///////////////////////
     public static final String SELECT_USER_DETAILS = "select * from account_details where id = ?;";
 
 //    public static final String SELECT_WALLET = "select * from wallet where id = ?;";
@@ -21,12 +21,24 @@ public class SQL {
 
     public static final String SELECT_TARIFFS = "select * from tariff;";
 
+    public static final String DELETE_TARIFF = "delete * from tariff where id = ?;";
+
     public static final String INSERT_PLACE = "insert into " +
             "place(street,district,city) " + "values(?,?,?);";
+
+    public static final String INSERT_USER_SUGGESTION = "insert into "+
+            "suggestion(name_en,time,description,price,service_id) "+
+            "values(?,?,?,?,?);";
+
+    public static final String SELECT_USER_SUGGESTION_BY_ID = "select * from suggestion where id = ?;";
+
+    public static final String SELECT_USER_SUGGESTIONS = "select * from suggestion;";
 
     public static final String SELECT_ROLE = "select role from role where id = ?;";
 
     public static final String SELECT_PLACE = "select * from place where id = ?;";
+
+    public static final String UPDATE_PLACE = "update place set street = ?,district = ?,city = ? where id = ?;";
 
     public static final String INSERT_SERVICE = "insert into service(service_en) " + "values(?);";
 
@@ -35,8 +47,13 @@ public class SQL {
 
     public static final String ADD_CHANGE = "UPDATE wallet SET funds = ? WHERE id = ?;";
 
-    public static final String INSERT_PAYMENT= "insert into payment(account_id,tariff_id,price,time) " +
-            "values(?,?,?,?);";
+    public static final String TARIFF_PAYMENT = "";
+
+    public static final String SHOW_SELECTION= "select * from selection where account_id = ?";
+
+    public static final String INSERT_SELECTION = "insert into selection(account_id,tariff_id) values(?,?)";
+
+    public static final String TARIFF_RENDER = "UPDATE wallet SET funds = ? WHERE id = ?;"; /////////////////////////////////////////
 
     public static final String SELECT_WALLET = "select * from wallet where id = ?;";
 
@@ -66,9 +83,11 @@ public class SQL {
 
     public static final String SELECT_TARIFF_BY_PLACE = "select * from tariff where place_id = ?;";
 
-    public static final String SELECT_TARIFF_BY_SERVICE = "select * from tariff where service_id = (select id from service where service_en = ?);";
+    public static final String SELECT_TARIFF_BY_SERVICE = "select * from tariff where service_id in (select id from service where service_en = ?);";
 
-    public static final String SELECT_SERVICES = "select * from service";
+    public static final String SELECT_SERVICES = "select * from service;";
+
+    public static final String GET_SERVICES = "select service_en from service;";
 
     public static final String SET_TARIFF_STATUS = "update tariff set tariff_status_id = ? where id = ?;";
 

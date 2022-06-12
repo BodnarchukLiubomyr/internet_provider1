@@ -3,19 +3,21 @@ package com.company.model.entity.payment;
 import com.company.model.entity.service.Service;
 import com.company.model.entity.tariff.Tariff;
 import com.company.model.entity.tariff.TariffStatus;
+import com.company.model.entity.user.User;
 import com.company.model.entity.wallet.Wallet;
 
 import java.math.BigDecimal;
 
 public class Payment {
-    private int userId;
+    private int userId;/////////////////////////////////////////
+    private int tariffId;///////////////////////////////////////
+    private BigDecimal price;
+    private int time;
+
     private String firstnameEn;
     private String lastnameEn;
 
-    private int tariffId;
     private String tariffName;
-    private int time;
-    private BigDecimal price;
     private String description;
     private String service;
 
@@ -24,18 +26,18 @@ public class Payment {
         this.userId = userId;
     }
 
-    public String getFirstnameEn() {return firstnameEn;}
-    public void setFirstnameEn(String firstnameEn) {this.firstnameEn = firstnameEn;}
-
-    public String getLastnameEn() {return lastnameEn;}
-    public void setLastnameEn(String lastnameEn) {this.lastnameEn = lastnameEn;}
-
     public int getTariffId() {
         return tariffId;
     }
     public void setTariffId(int tariffId) {
         this.tariffId = tariffId;
     }
+
+    public String getFirstnameEn() {return firstnameEn;}
+    public void setFirstnameEn(String firstnameEn) {this.firstnameEn = firstnameEn;}
+
+    public String getLastnameEn() {return lastnameEn;}
+    public void setLastnameEn(String lastnameEn) {this.lastnameEn = lastnameEn;}
 
     public String getTariffName() {return tariffName;}
     public void setTariffName(String tariffName) {this.tariffName = tariffName;}

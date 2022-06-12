@@ -11,12 +11,16 @@ public class Constants {
     public static final String FIRST_PAGE = "firstPage";
     public static final String LAST_PAGE = "lastPage";
     public static final int CONST_ONE = 1;
-    public static final int TARIFFS_LIMIT = 4;
+    public static final int TARIFFS_LIMIT = 1;
     public static final String SERVICES = "services";
     public static final String STATUSES = "statuses";
     public static final String ACTIVE2 = "active2";
     public static final String ACTIVE_SESSION = "active_session";
     public static final String FUNDS = "funds";
     public static final String CHANGE = "change";
+    public static final String PRICE = "price";
     public static final String NAME = "name";
+    public static final String ID = "id";
+    public static final String ASC = "ascending";
+    public static final String DESC = "descending";
 }

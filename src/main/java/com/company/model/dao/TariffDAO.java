@@ -46,12 +46,35 @@ public class TariffDAO {
             close(resultSet);
         }
     }
-    public Tariff selectTariff(int id) throws SQLException{
+    public Tariff selectTariff(int id){
         Tariff tariff = new Tariff();
         PreparedStatement pStatement = null;
         ResultSet resultSet = null;
         try (Connection connection = MySQLConnector.getConnection() ){
             pStatement = connection.prepareStatement(SELECT_TARIFF_BY_ID);
+            pStatement.setInt(1,id);
+            resultSet = pStatement.executeQuery();
+            if (resultSet.next()){
+                mapTariff(tariff,resultSet);
+            }
+            return tariff;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            close(pStatement);
+            close(resultSet);
+        }
+        return null;
+    }
+
+    public Tariff deleteTariff(int id){
+        Tariff tariff = new Tariff();
+        PreparedStatement pStatement = null;
+        ResultSet resultSet = null;
+        try (Connection connection = MySQLConnector.getConnection() ){
+            pStatement = connection.prepareStatement(DELETE_TARIFF);
             pStatement.setInt(1,id);
             resultSet = pStatement.executeQuery();
             if (resultSet.next()){

@@ -75,6 +75,28 @@ public class ServiceDAO {
         return services;
     }
 
+//    public List<String> getServices(){
+//        List<String> services = new ArrayList<>();
+//        Service service_name = new Service();
+//        PreparedStatement pStatement = null;
+//        ResultSet resultSet = null;
+//        try (Connection connection = MySQLConnector.getConnection() ){
+//            pStatement = connection.prepareStatement(GET_SERVICES);
+//            resultSet = pStatement.executeQuery();
+//            while(resultSet.next()) {
+//                services.add(resultSet.getString("service_en"));
+////                service_name.setService_en(resultSet.getString("service_en"));
+////                services.add(service_name);
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            close(resultSet);
+//            close(pStatement);
+//        }
+//        return services;
+//    }
+
 
     public void mapService(Service service, ResultSet resultSet) throws SQLException {
         service.setId(resultSet.getInt("id"));

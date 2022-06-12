@@ -40,8 +40,8 @@ public class AddTariff extends HttpServlet {
             tariff.setStatus(status);
             new TariffDAO().insertTariff(tariff);
             /////////////////////////////////////////////////////////
-            HttpSession tariffSession = req.getSession();
-            tariffSession.setAttribute(TARIFF,tariff);
+//            HttpSession tariffSession = req.getSession();
+//            tariffSession.setAttribute(TARIFF,tariff);
             /////////////////////////////////////////////////////////
             resp.sendRedirect("/internet_provider/home");
         } else if("add service".equals(req.getParameter("action"))){
